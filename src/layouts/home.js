@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import CardArrayRadioGroup from "../components/RadioGroup.js";
+import CardArrayRadioGroup from "../components/CardArrayRadioGroup.js";
 
 import Button from '@mui/material/Button';
 
