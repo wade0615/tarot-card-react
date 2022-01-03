@@ -21,7 +21,10 @@ function Home() {
   };
   function getACard() {
     const firstCardIndex = getRangeRandom(0, cards.length - 1);
-    setFirstCard(cards[firstCardIndex]);
+    const firstCardInversion = getRangeRandom(0, 1);
+    let firstCard = cards[firstCardIndex];
+    firstCard.inversion = firstCardInversion === 1 ? true : false;
+    setFirstCard(firstCard);
   };
 
   return (
@@ -31,7 +34,11 @@ function Home() {
         <Button variant="outlined" onClick={getACard}>
           抽卡
         </Button>
-        <SingleCardResult name={firstCard?.name} imgUrl={firstCard?.img} />
+        <SingleCardResult
+          name={firstCard?.name}
+          imgUrl={firstCard?.img}
+          inversion={firstCard?.inversion}
+        />
       </div>
     </HomeDiv>
   );
