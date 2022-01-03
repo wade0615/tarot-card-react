@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
-import CardArrayRadioGroup from "../components/CardArrayRadioGroup.js";
+import CardArrayRadioGroup from "../components/CardArrayRadioGroup";
+import SingleCardResult from "../components/SingleCardResult";
 
 import Button from '@mui/material/Button';
 
@@ -15,6 +16,7 @@ function Home() {
       <div>
         <CardArrayRadioGroup />
         <Button variant="outlined">抽卡</Button>
+        <SingleCardResult name="Bob" />
       </div>
     </HomeDiv>
   );
