@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
+const Sample = styled.section`
+  position: relative;
+  color: #878787;
+`
+
 function sample() {
-  const Sample = styled.section`
-    position: relative;
-    color: #878787;
-  `
   return (
     <Sample>
       Sample
