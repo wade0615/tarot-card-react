@@ -18,7 +18,7 @@ function cardArrayRadioGroup() {
         <FormLabel component="legend">選取你的牌陣</FormLabel>
         <RadioGroup
           aria-label="gender"
-          defaultValue="celticCross"
+          defaultValue="single"
           name="radio-buttons-group"
         >
           <FormControlLabel value="single" control={<Radio />} label="單牌結果" />

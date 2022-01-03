@@ -22,7 +22,7 @@ function Home() {
   function getACard() {
     const firstCardIndex = getRangeRandom(0, cards.length - 1);
     const firstCardInversion = getRangeRandom(0, 1);
-    let firstCard = cards[firstCardIndex];
+    let firstCard = JSON.parse(JSON.stringify(cards[firstCardIndex]));
     firstCard.inversion = firstCardInversion === 1 ? true : false;
     setFirstCard(firstCard);
   };
