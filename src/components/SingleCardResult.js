@@ -8,8 +8,11 @@ const SingleCardResult = styled.section`
 function singleCardResult(props) {
   return (
     <SingleCardResult>
-      SingleCardResult{props.name}
-      <img src="https://images.lnka.tw/images/files/tarot/swords_7.jpg"></img>
+      {props.name}
+      <img
+        src={props.imgUrl}
+        className="w-52"
+      />
     </SingleCardResult>
   );
 }

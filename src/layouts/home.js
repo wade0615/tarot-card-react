@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import styled from "styled-components";
 
 import CardArrayRadioGroup from "../components/CardArrayRadioGroup";
@@ -13,13 +14,14 @@ const HomeDiv = styled.div`
 `
 
 function Home() {
+  const [firstCard, setFirstCard] = useState(undefined);
+
   function getRangeRandom(min,max) {
     return Math.floor(Math.random()*(max-min+1))+min;
   };
   function getACard() {
-    console.log("getACard");
     const firstCardIndex = getRangeRandom(0, cards.length - 1);
-    console.log("firstCardIndex", firstCardIndex, cards[firstCardIndex].name);
+    setFirstCard(cards[firstCardIndex]);
   };
 
   return (
@@ -29,7 +31,7 @@ function Home() {
         <Button variant="outlined" onClick={getACard}>
           抽卡
         </Button>
-        <SingleCardResult name="Bob" />
+        <SingleCardResult name={firstCard?.name} imgUrl={firstCard?.img} />
       </div>
     </HomeDiv>
   );
