@@ -1,16 +1,21 @@
 import styled from "styled-components";
+
+import CardArrayRadioGroup from "../components/RadioGroup.js";
+
 import Button from '@mui/material/Button';
 
-function Home() {
+const HomeDiv = styled.div`
+  position: relative;
+  color: #878787;
+`
 
-  const HomeDiv = styled.div`
-    position: relative;
-    color: #878787;
-  `
+function Home() {
   return (
     <HomeDiv className="h-screen flex justify-center items-center">
-      home
-      <Button variant="outlined">Primary</Button>
+      <div>
+        <CardArrayRadioGroup />
+        <Button variant="outlined">抽卡</Button>
+      </div>
     </HomeDiv>
   );
 }
