@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import styled from "styled-components";
 
 import Radio from '@mui/material/Radio';
@@ -6,19 +7,28 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 
-const CardArrayRadioGroup = styled.section`
+const StyleCardArrayRadioGroup = styled.section`
   position: relative;
   color: #878787;
 `
 
-function cardArrayRadioGroup() {
+function CardArrayRadioGroup(props) {
+  const [value, setValue] = useState('single');
+  props.handleChange(value);
+
+  const valueChange = (event) => {
+    setValue(event.target.value);
+    props.handleChange(event.target.value);
+  };
+
   return (
-    <CardArrayRadioGroup>
+    <StyleCardArrayRadioGroup>
       <FormControl component="fieldset">
         <FormLabel component="legend">選取你的牌陣</FormLabel>
         <RadioGroup
           aria-label="gender"
-          defaultValue="single"
+          value={value}
+          onChange={valueChange}
           name="radio-buttons-group"
         >
           <FormControlLabel value="single" control={<Radio />} label="單牌結果" />
@@ -27,8 +37,8 @@ function cardArrayRadioGroup() {
           <FormControlLabel value="celticCross" control={<Radio />} label="凱爾特十字" />
         </RadioGroup>
       </FormControl>
-    </CardArrayRadioGroup>
+    </StyleCardArrayRadioGroup>
   );
 }
 
-export default cardArrayRadioGroup;
+export default CardArrayRadioGroup;
