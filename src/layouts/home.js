@@ -17,10 +17,19 @@ const HomeDiv = styled.div`
 function Home() {
   const [cardArray, setCardArray] = useState(undefined);
   const [firstCard, setFirstCard] = useState(undefined);
+  const [threeCards, setThreeCards] = useState([]);
   
   const cardArrayHandleChange = (e) => {
     setCardArray(e);
   };
+  function getCardsResult(){
+    if(cardArray == "single"){
+      getACard();
+    } else if(cardArray == "treble") {
+      getThreeCards();
+    }
+  };
+
   function getRangeRandom(min,max) {
     return Math.floor(Math.random()*(max-min+1))+min;
   };
@@ -30,6 +39,20 @@ function Home() {
     let firstCard = JSON.parse(JSON.stringify(cards[firstCardIndex]));
     firstCard.inversion = firstCardInversion === 1 ? true : false;
     setFirstCard(firstCard);
+  };
+  function getThreeCards() {
+    setThreeCards(getMultipleRandomCards(3, cards));
+  };
+  function getMultipleRandomCards(num, cardsArr) {
+    let randomCards = [];
+    let arr = JSON.parse(JSON.stringify(cardsArr));
+    for(var index=0; index<num; index++){
+      const pickedIndex = getRangeRandom(0, arr.length - 1);
+      randomCards.push(arr.splice(pickedIndex, 1)[0]);
+      const cardInversion = getRangeRandom(0, 1);
+      randomCards[randomCards.length - 1].inversion = cardInversion === 1 ? true : false;
+    };
+    return randomCards;
   };
 
   let cardsResults;
@@ -41,9 +64,7 @@ function Home() {
     ></SingleCardResult>
   } else if (cardArray === "treble") {
     cardsResults = <ThreeCardsResult
-      name={firstCard?.name}
-      imgUrl={firstCard?.img}
-      inversion={firstCard?.inversion}
+      cards = {threeCards}
     ></ThreeCardsResult>
   }
 
@@ -53,8 +74,8 @@ function Home() {
         <CardArrayRadioGroup
           handleChange={cardArrayHandleChange}
         />
-        <Button variant="outlined" onClick={getACard}>
-          抽卡
+        <Button variant="outlined" onClick={getCardsResult}>
+          我在此鄭重發誓，我絕對不懷好意
         </Button>
       </section>
       {cardsResults}
