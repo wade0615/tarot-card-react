@@ -77,6 +77,7 @@ import twoSwords from "./two-swords.jpeg"
 import twoWands from "./two-wands.jpeg"
 import world from "./world.jpeg"
 
+//eslint-disable-next-line
 export default [
   {
     name: "Ace of cups 聖杯一",

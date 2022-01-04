@@ -12,6 +12,7 @@ function singleCardResult(props) {
       <p>{props.name}</p>
       <img
         src={props.imgUrl}
+        alt={props.name}
         className={`
           w-52
           ${props.inversion ? 'rotate-180' : ''}

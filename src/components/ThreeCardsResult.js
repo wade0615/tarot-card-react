@@ -11,6 +11,7 @@ function ThreeCardsResult(props) {
       <p className="text-center">{card.name}</p>
       <img
         src={card.img}
+        alt={props.name}
         className={`w-52 ${card.inversion ? 'rotate-180' : ''}`}
       />
     </div>

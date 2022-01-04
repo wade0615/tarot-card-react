@@ -23,9 +23,9 @@ function Home() {
     setCardArray(e);
   };
   function getCardsResult(){
-    if(cardArray == "single"){
+    if(cardArray === "single"){
       getACard();
-    } else if(cardArray == "treble") {
+    } else if(cardArray === "treble") {
       getThreeCards();
     }
   };
