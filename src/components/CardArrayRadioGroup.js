@@ -14,7 +14,6 @@ const StyleCardArrayRadioGroup = styled.section`
 
 function CardArrayRadioGroup(props) {
   const [value, setValue] = useState('single');
-  props.handleChange(value);
 
   const valueChange = (event) => {
     setValue(event.target.value);

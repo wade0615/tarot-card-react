@@ -8,7 +8,8 @@ const StyleThreeCardsResult = styled.section`
 function ThreeCardsResult(props) {
   return (
     <StyleThreeCardsResult>
-      {props.name}
+      <h2>三牌陣</h2>
+      <p>{props.name}</p>
       <img
         src={props.imgUrl}
         className={`
