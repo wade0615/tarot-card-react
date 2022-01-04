@@ -34,14 +34,12 @@ function Home() {
 
   let cardsResults;
   if(cardArray === "single") {
-    console.log('cardArray === "single"');
     cardsResults = <SingleCardResult
       name={firstCard?.name}
       imgUrl={firstCard?.img}
       inversion={firstCard?.inversion}
     ></SingleCardResult>
   } else if (cardArray === "treble") {
-    console.log('cardArray === "treble"');
     cardsResults = <ThreeCardsResult
       name={firstCard?.name}
       imgUrl={firstCard?.img}
@@ -50,16 +48,16 @@ function Home() {
   }
 
   return (
-    <HomeDiv className="h-screen flex justify-center items-center">
-      <div>
+    <HomeDiv className="min-h-screen flex justify-center items-center flex-col">
+      <section>
         <CardArrayRadioGroup
           handleChange={cardArrayHandleChange}
         />
         <Button variant="outlined" onClick={getACard}>
           抽卡
         </Button>
-        {cardsResults}
-      </div>
+      </section>
+      {cardsResults}
     </HomeDiv>
   );
 }

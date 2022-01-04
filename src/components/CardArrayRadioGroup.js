@@ -32,8 +32,8 @@ function CardArrayRadioGroup(props) {
         >
           <FormControlLabel value="single" control={<Radio />} label="單牌結果" />
           <FormControlLabel value="treble" control={<Radio />} label="三牌時間流" />
-          <FormControlLabel value="penta" control={<Radio />} label="五牌時間流" />
-          <FormControlLabel value="celticCross" control={<Radio />} label="凱爾特十字" />
+          <FormControlLabel value="penta" control={<Radio />} label="五牌時間流" disabled />
+          <FormControlLabel value="celticCross" control={<Radio />} label="凱爾特十字" disabled />
         </RadioGroup>
       </FormControl>
     </StyleCardArrayRadioGroup>
