@@ -19,7 +19,7 @@ function ThreeCardsResult(props) {
 
   return (
     <StyleThreeCardsResult>
-      <h2>三牌陣</h2>
+      <h2 className="mb-4 text-center">三牌陣</h2>
       {cardsResults}
     </StyleThreeCardsResult>
   );
