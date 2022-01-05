@@ -13,7 +13,7 @@ const StyleCardArrayRadioGroup = styled.section`
 `
 
 function CardArrayRadioGroup(props) {
-  const [value, setValue] = useState('single');
+  const [value, setValue] = useState('');
 
   const valueChange = (event) => {
     setValue(event.target.value);

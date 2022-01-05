@@ -8,7 +8,7 @@ const SingleCardResult = styled.section`
 function singleCardResult(props) {
   return (
     <SingleCardResult>
-      <h2>單牌陣</h2>
+      <h2 className="mb-4 text-center">單牌陣</h2>
       <p>{props.name}</p>
       <img
         src={props.imgUrl}

@@ -70,7 +70,7 @@ function Home() {
 
   return (
     <HomeDiv className="min-h-screen flex justify-center items-center flex-col">
-      <section>
+      <section className="mb-4">
         <CardArrayRadioGroup
           handleChange={cardArrayHandleChange}
         />

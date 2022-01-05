@@ -8,19 +8,21 @@ const StyleThreeCardsResult = styled.section`
 function ThreeCardsResult(props) {
   let cardsResults = props.cards.map((card, index) => 
     <div key={index} className="inline-block">
-      <p className="text-center">{card.name}</p>
+      <p className="text-center p-1">{card.name}</p>
       <img
         src={card.img}
         alt={props.name}
-        className={`w-52 ${card.inversion ? 'rotate-180' : ''}`}
+        className={`${card.inversion ? 'rotate-180' : ''}`}
       />
     </div>
   );
 
   return (
     <StyleThreeCardsResult>
-      <h2>三牌陣</h2>
-      {cardsResults}
+      <h2 className="mb-4 text-center">三牌陣</h2>
+      <div className="max-w-screen-sm flex items-end">
+        {cardsResults}
+      </div>
     </StyleThreeCardsResult>
   );
 }
