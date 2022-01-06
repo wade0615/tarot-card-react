@@ -212,19 +212,19 @@ export default [
     img: kingWands
   },
   {
-    name: "Knight cups 聖杯八",
+    name: "Knight cups 聖杯騎士",
     img: knightCups
   },
   {
-    name: "Knight pentacles 錢幣八",
+    name: "Knight pentacles 錢幣騎士",
     img: knightPentacles
   },
   {
-    name: "Knight swords 寶劍八",
+    name: "Knight swords 寶劍騎士",
     img: knightSwords
   },
   {
-    name: "Knight wands 權杖八",
+    name: "Knight wands 權杖騎士",
     img: knightWands
   },
   {
