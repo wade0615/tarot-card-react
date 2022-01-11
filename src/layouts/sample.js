@@ -1,16 +1,17 @@
+import React, { useState } from 'react';
 import styled from "styled-components";
 
-const Sample = styled.section`
+const StyleSample = styled.section`
   position: relative;
   color: #878787;
 `
 
-function sample() {
+function Sample() {
   return (
-    <Sample>
+    <StyleSample>
       Sample
-    </Sample>
+    </StyleSample>
   );
 }
 
-export default sample;
+export default Sample;
