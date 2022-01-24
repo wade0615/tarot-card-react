@@ -1,14 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ROUTES from './config/router.config';
 import './index.css';
 import Nav from './components/Nav';
 import Home from './layouts/home';
+import Library from './layouts/Library';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Nav />
-    <Home />
+    <BrowserRouter>
+      <Nav />
+      <Routes>
+        <Route exact path={ROUTES.MAIN.MAIN} element={<Home />} />
+        <Route exact path={ROUTES.MAIN.CARD_EXPLANATION} element={<Library />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
