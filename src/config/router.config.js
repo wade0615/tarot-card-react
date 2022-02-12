@@ -1,10 +1,10 @@
 // define route path
 
 const PAGE = {
-  MAIN: '/',
-  CARD_EXPLANATION: '/card-explanation',
-  LOGING: '/login',
-  SAMPLE: '/sample',
+  MAIN: "/",
+  CARD_EXPLANATION: "/card-explanation",
+  LOGING: "/login",
+  SAMPLE: "/sample",
 };
 
 const ROUTES = {
