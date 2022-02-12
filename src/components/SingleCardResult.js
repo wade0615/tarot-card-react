@@ -1,9 +1,10 @@
+import React from "react";
 import styled from "styled-components";
 
 const SingleCardResult = styled.section`
   position: relative;
   color: #878787;
-`
+`;
 
 function singleCardResult(props) {
   return (
@@ -15,7 +16,7 @@ function singleCardResult(props) {
         alt={props.name}
         className={`
           w-52
-          ${props.inversion ? 'rotate-180' : ''}
+          ${props.inversion ? "rotate-180" : ""}
         `}
       />
     </SingleCardResult>
