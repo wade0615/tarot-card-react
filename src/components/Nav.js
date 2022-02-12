@@ -17,7 +17,7 @@ const StyleNav = styled.section`
 function Nav({ ...props }) {
   const currentLocation = useLocation();
   const navigate = useNavigate();
-  const [value, setValue] = React.useState(currentLocation.pathname);
+  const [value, setValue] = useState(currentLocation.pathname);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
