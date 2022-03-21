@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import cards from "../assets/cards/index";
+import Link from "@mui/material/Link";
 
 const StyleLibrary = styled.section`
   position: relative;
@@ -24,8 +25,14 @@ function returnCardsElement(cards) {
   return cards.map((card, index) => {
     return (
       <div key={index} className="inline-block align-top w-1/5 mb-4 p-1">
-        <img src={card.img} alt={card.name} />
-        <p className="text-center">{card.name}</p>
+        <Link
+          href={`/${card.ROUTE.split(" ").join("-").toLowerCase()}`}
+          underline="none"
+          color="inherit"
+        >
+          <img src={card.img} alt={card.name} />
+          <p className="text-center">{card.name}</p>
+        </Link>
       </div>
     );
   });
