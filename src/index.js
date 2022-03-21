@@ -6,7 +6,10 @@ import "./index.css";
 import Nav from "./components/Nav";
 import Home from "./layouts/home";
 import Library from "./layouts/Library";
+import CardExplanation from "./layouts/CardExplanation";
 import reportWebVitals from "./reportWebVitals";
+
+import cards from "./assets/cards/index";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -19,6 +22,14 @@ ReactDOM.render(
           path={ROUTES.MAIN.CARD_EXPLANATION}
           element={<Library />}
         />
+        {cards.map((card) => (
+          <Route
+            key={card.ROUTE}
+            exact
+            path={ROUTES.MAIN[card.ROUTE.split(" ").join("").toUpperCase()]}
+            element={<CardExplanation />}
+          />
+        ))}
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
