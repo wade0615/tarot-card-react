@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+// import React, { useState } from "react";
 import styled from "styled-components";
 
 const CardExplanationWrapper = styled.div`
@@ -7,7 +8,7 @@ const CardExplanationWrapper = styled.div`
 `;
 
 function CardExplanation() {
-  const [card, setCard] = useState(false);
+  // const [card, setCard] = useState(false);
 
   return (
     <CardExplanationWrapper className="min-h-screen flex justify-center items-center flex-col">
