@@ -21,7 +21,7 @@ let ROUTES = {
 cards.forEach((card) => {
   ROUTES.MAIN[
     card.ROUTE.split(" ").join("").toUpperCase()
-  ] = `/${card.ROUTE.split(" ").join("-").toLowerCase()}`;
+  ] = `${card.ROUTE.split(" ").join("-").toLowerCase()}`;
 });
 console.log(ROUTES);
 
