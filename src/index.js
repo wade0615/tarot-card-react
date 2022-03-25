@@ -24,9 +24,9 @@ ReactDOM.render(
         />
         {cards.map((card) => (
           <Route
-            key={card.ROUTE}
+            key={card.route}
             exact
-            path={ROUTES.MAIN[card.ROUTE.split(" ").join("").toUpperCase()]}
+            path={ROUTES.MAIN[card.route.split(" ").join("").toUpperCase()]}
             element={<CardExplanation />}
           />
         ))}
