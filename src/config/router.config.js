@@ -9,7 +9,7 @@ const PAGE = {
   SAMPLE: "/sample",
 };
 
-let ROUTES = {
+const ROUTES = {
   MAIN: {
     MAIN: PAGE.MAIN,
     CARD_EXPLANATION: PAGE.CARD_EXPLANATION,
@@ -19,9 +19,10 @@ let ROUTES = {
 };
 
 cards.forEach((card) => {
-  ROUTES.MAIN[
-    card.ROUTE.split(" ").join("").toUpperCase()
-  ] = `${card.ROUTE.split(" ").join("-").toLowerCase()}`;
+  ROUTES.MAIN[card.route.split(" ").join("").toUpperCase()] = `/${card.route
+    .split(" ")
+    .join("-")
+    .toLowerCase()}`;
 });
 console.log(ROUTES);
 

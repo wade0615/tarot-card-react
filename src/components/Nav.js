@@ -40,15 +40,7 @@ function Nav({ ...props }) {
         />
         {value !== ROUTES.MAIN.MAIN &&
         value !== ROUTES.MAIN.CARD_EXPLANATION ? (
-          <Tab
-            value={
-              value !== ROUTES.MAIN.MAIN &&
-              value !== ROUTES.MAIN.CARD_EXPLANATION
-                ? value
-                : ""
-            }
-            label="萬應室"
-          />
+          <Tab value={value} label="萬應室" />
         ) : (
           ""
         )}
