@@ -22,9 +22,9 @@ ReactDOM.render(
           path={ROUTES.MAIN.CARD_EXPLANATION}
           element={<Library />}
         />
-        {cards.map((card) => (
+        {cards.map((card, index) => (
           <Route
-            key={card.route}
+            key={"card" + index}
             exact
             path={ROUTES.MAIN[card.route.split(" ").join("").toUpperCase()]}
             element={<CardExplanation />}
