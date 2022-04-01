@@ -26,7 +26,7 @@ function returnCardsElement(cards) {
     return (
       <div key={index} className="inline-block align-top w-1/5 mb-4 p-1">
         <Link
-          href={`/${card.route.split(" ").join("-").toLowerCase()}`}
+          href={`/${card.route.toLowerCase()}`}
           underline="none"
           color="inherit"
         >

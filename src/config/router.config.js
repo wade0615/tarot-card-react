@@ -19,10 +19,9 @@ const ROUTES = {
 };
 
 cards.forEach((card) => {
-  ROUTES.MAIN[card.route.split(" ").join("").toUpperCase()] = `/${card.route
-    .split(" ")
-    .join("-")
-    .toLowerCase()}`;
+  ROUTES.MAIN[
+    card.route.split(" ").join("").toUpperCase()
+  ] = `/${card.route.toLowerCase()}`;
 });
 console.log(ROUTES);
 
