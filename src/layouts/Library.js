@@ -22,16 +22,22 @@ function filterWithoutObjKeyInArr(arr, key, filterStingArr) {
 }
 /** 陣列生成卡片列表 */
 function returnCardsElement(cards) {
-  return cards.map((card, index) => {
+  const sortCards = cards.sort(function (a, b) {
+    return a.order - b.order;
+  });
+  return sortCards.map((card, index) => {
     return (
-      <div key={index} className="inline-block align-top w-1/5 mb-4 p-1">
+      <div
+        key={index}
+        className="inline-block align-top w-1/4 md:w-1/5 mb-4 p-1"
+      >
         <Link
           href={`/${card.route.toLowerCase()}`}
           underline="none"
           color="inherit"
         >
           <img src={card.img} alt={card.name} />
-          <p className="text-center">{card.name}</p>
+          <p className="text-center break-all">{card.name}</p>
         </Link>
       </div>
     );
