@@ -23,6 +23,5 @@ cards.forEach((card) => {
     card.route.split(" ").join("").toUpperCase()
   ] = `/${card.route.toLowerCase()}`;
 });
-console.log(ROUTES);
 
 export default ROUTES;
