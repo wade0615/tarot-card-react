@@ -30,7 +30,7 @@ function CardExplanation() {
   }, [pathName]);
 
   return (
-    <CardExplanationWrapper className="min-h-screen p-6">
+    <CardExplanationWrapper className="min-h-screen max-w-screen-sm m-auto p-6">
       <h2 className="text-3xl text-center">{cardName}</h2>
       <img className="mx-auto" src={cardUrl} alt={cardName} />
       <p
