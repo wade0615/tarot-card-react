@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import richartQRcode from "../assets/richart.jpeg";
 
@@ -8,7 +8,7 @@ const BankWrapper = styled.div`
 `;
 
 function Gringotts() {
-  const [bankName, setBankName] = useState("Richart");
+  const [bankName] = useState("Richart");
 
   return (
     <BankWrapper className="min-h-screen max-w-screen-sm m-auto p-6 pt-20">
