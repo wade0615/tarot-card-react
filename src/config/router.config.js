@@ -7,12 +7,14 @@ const PAGE = {
   CARD_EXPLANATION: "/card-explanation",
   LOGING: "/login",
   SAMPLE: "/sample",
+  GRINGOTTS: "/gringotts",
 };
 
 const ROUTES = {
   MAIN: {
     MAIN: PAGE.MAIN,
     CARD_EXPLANATION: PAGE.CARD_EXPLANATION,
+    GRINGOTTS: PAGE.GRINGOTTS,
   },
   LOGIN: PAGE.LOGING,
   SAMPLE: PAGE.SAMPLE,

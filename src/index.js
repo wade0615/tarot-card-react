@@ -7,6 +7,7 @@ import Nav from "./components/Nav";
 import Home from "./layouts/home";
 import Library from "./layouts/Library";
 import CardExplanation from "./layouts/CardExplanation";
+import Gringotts from "./layouts/Gringotts";
 import reportWebVitals from "./reportWebVitals";
 
 import cards from "./assets/cards/index";
@@ -30,6 +31,7 @@ ReactDOM.render(
             element={<CardExplanation />}
           />
         ))}
+        <Route exact path={ROUTES.MAIN.GRINGOTTS} element={<Gringotts />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
