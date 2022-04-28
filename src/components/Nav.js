@@ -39,11 +39,16 @@ function Nav({ ...props }) {
           label="《標準咒語，第四級》"
         />
         {value !== ROUTES.MAIN.MAIN &&
-        value !== ROUTES.MAIN.CARD_EXPLANATION ? (
+        value !== ROUTES.MAIN.CARD_EXPLANATION &&
+        value !== ROUTES.MAIN.GRINGOTTS? (
           <Tab value={value} label="萬應室" />
         ) : (
           ""
         )}
+        <Tab
+          value={ROUTES.MAIN.GRINGOTTS}
+          label="古靈閣"
+        />
       </Tabs>
     </StyleNav>
   );
