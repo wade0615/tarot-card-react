@@ -33,6 +33,8 @@ function Home() {
   function getRangeRandom(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
+
+  /** 取一張牌 */
   function getACard() {
     const firstCardIndex = getRangeRandom(0, cards.length - 1);
     const firstCardInversion = getRangeRandom(0, 1);
@@ -40,6 +42,8 @@ function Home() {
     firstCard.inversion = firstCardInversion === 1 ? true : false;
     setFirstCard(firstCard);
   }
+
+  /** 取三張牌 */
   function getThreeCards() {
     setThreeCards(getMultipleRandomCards(3, cards));
   }

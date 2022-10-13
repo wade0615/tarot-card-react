@@ -11,7 +11,11 @@ function CardExplanation() {
   const [pathName, setPathName] = useState("");
   const [cardName, setCardName] = useState("");
   const [cardUrl, setCardUrl] = useState("");
-  const [cardExp, setCardExp] = useState("");
+  const [forwardKeyword, setForwardKeyword] = useState("");
+  const [forwardExp, setForwardExp] = useState("");
+  const [reverseKeyword, setReverseKeyword] = useState("");
+  const [reverseExp, setReverseExp] = useState("");
+  const [star, setStar] = useState("");
 
   useEffect(() => {
     setPathName(window.location.pathname);
@@ -23,7 +27,11 @@ function CardExplanation() {
       setCardName(currentCard[0]?.name);
       setCardUrl(currentCard[0]?.img);
       if (currentCard[0]?.waiteExp) {
-        setCardExp(currentCard[0]?.waiteExp);
+        setForwardKeyword(currentCard[0]?.waiteExp?.forwardKeyword);
+        setForwardExp(currentCard[0]?.waiteExp?.forwardExp);
+        setReverseKeyword(currentCard[0]?.waiteExp?.reverseKeyword);
+        setReverseExp(currentCard[0]?.waiteExp?.reverseExp);
+        setStar(currentCard[0]?.waiteExp?.star);
       }
     }
     getCurrentCard();
@@ -32,10 +40,26 @@ function CardExplanation() {
   return (
     <CardExplanationWrapper className="min-h-screen max-w-screen-sm m-auto p-6">
       <h2 className="text-3xl text-center">{cardName}</h2>
-      <img className="mx-auto" src={cardUrl} alt={cardName} />
+      <img className="mx-auto mb-4" src={cardUrl} alt={cardName} />
+      <h3
+        className="text-xl mb-4"
+        dangerouslySetInnerHTML={{ __html: `正位關鍵字：${forwardKeyword}` }}
+      ></h3>
+      <p
+        className="whitespace-pre-wrap mb-8"
+        dangerouslySetInnerHTML={{ __html: forwardExp }}
+      ></p>
+      <h3
+        className="text-xl mb-4"
+        dangerouslySetInnerHTML={{ __html: `逆位關鍵字：${reverseKeyword}` }}
+      ></h3>
+      <p
+        className="whitespace-pre-wrap mb-8"
+        dangerouslySetInnerHTML={{ __html: reverseExp }}
+      ></p>
       <p
         className="whitespace-pre-wrap"
-        dangerouslySetInnerHTML={{ __html: cardExp }}
+        dangerouslySetInnerHTML={{ __html: `代表星座：${star}` }}
       ></p>
     </CardExplanationWrapper>
   );
