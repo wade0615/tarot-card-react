@@ -108,6 +108,15 @@ export default [
     img: chariot,
     route: "chariot",
     order: 7,
+    waiteExp: {
+      forwardKeyword: "勝利，控制，意志力，勝利，斷言，決心",
+      forwardExp:
+        "它表明通過適當地運用意志力，信心和紀律，你將能夠克服所有的反對意見。卡片勸告你要大膽，但強調要控制你的衝動，這樣你才能把它們引導到更有創意的事情上。",
+      reverseKeyword: "缺乏控制和方向，侵略",
+      reverseExp:
+        "它表明你由於你未能控制對立的力量而導致你目前的失落和無力感。這也可能表明你在壓力下崩潰了。目前不是擔心你無法控制的事情，把精力集中在你擁有的東西上，並努力改變現狀。",
+      star: "巨蟹座",
+    },
   },
   {
     name: "Death 死神",
@@ -363,7 +372,7 @@ export default [
     route: "lovers",
     order: 6,
     waiteExp: {
-      forwardKeyword: "墜入愛河，建立夥伴關係，結合，承諾和選擇",
+      forwardKeyword: "選擇一段開始，墜入愛河，建立夥伴關係，結合，承諾和選擇",
       forwardExp:
         "它表明你在相互信任和吸引力的基礎上分享強大而親密的聯繫。該卡建議您在選擇方向之前深入分析您的感受，動機以及可用選項。",
       reverseKeyword: "不平衡，不忠，不和諧和分離 ",
