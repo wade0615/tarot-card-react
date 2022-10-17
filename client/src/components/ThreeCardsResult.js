@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import Link from "@mui/material/Link";
 
 const StyleThreeCardsResult = styled.section`
   position: relative;
@@ -7,16 +8,30 @@ const StyleThreeCardsResult = styled.section`
 `;
 
 function ThreeCardsResult(props) {
-  let cardsResults = props.cards.map((card, index) => (
-    <div key={index} className="inline-block">
-      <p className="text-center p-1">{card.name}</p>
-      <img
-        src={card.img}
-        alt={props.name}
-        className={`${card.inversion ? "rotate-180" : ""}`}
-      />
-    </div>
-  ));
+  const [cardsResults, setCardsResults] = useState(<></>);
+
+  useEffect(() => {
+    const elements = props.cards.map((card, index) => (
+      <div key={index} className="inline-block">
+        <p className="text-center p-1">{card.name}</p>
+        <Link
+          href={`/${card.route.toLowerCase()}`}
+          underline="none"
+          color="inherit"
+        >
+          <img
+            src={card.img}
+            alt={card.name}
+            className={`
+            w-52
+            ${card.inversion ? "rotate-180" : ""}
+          `}
+          />
+        </Link>
+      </div>
+    ));
+    setCardsResults(elements);
+  }, [props]);
 
   return (
     <StyleThreeCardsResult>

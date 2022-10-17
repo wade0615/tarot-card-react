@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 import CardArrayRadioGroup from "../components/CardArrayRadioGroup";
@@ -16,6 +16,7 @@ const HomeDiv = styled.div`
 
 function Home() {
   const [cardArray, setCardArray] = useState(undefined);
+  const [cardsResults, setCardsResults] = useState(<></>);
   const [firstCard, setFirstCard] = useState(undefined);
   const [threeCards, setThreeCards] = useState([]);
 
@@ -60,18 +61,22 @@ function Home() {
     return randomCards;
   }
 
-  let cardsResults;
-  if (cardArray === "single") {
-    cardsResults = (
-      <SingleCardResult
-        name={firstCard?.name}
-        imgUrl={firstCard?.img}
-        inversion={firstCard?.inversion}
-      ></SingleCardResult>
-    );
-  } else if (cardArray === "treble") {
-    cardsResults = <ThreeCardsResult cards={threeCards}></ThreeCardsResult>;
-  }
+  useEffect(() => {
+    if (cardArray === "single" && firstCard) {
+      const res = (
+        <SingleCardResult
+          name={firstCard?.name}
+          imgUrl={firstCard?.img}
+          route={firstCard?.route}
+          inversion={firstCard?.inversion}
+        ></SingleCardResult>
+      );
+      setCardsResults(res);
+    } else if (cardArray === "treble" && threeCards.length > 0) {
+      const res = <ThreeCardsResult cards={threeCards}></ThreeCardsResult>;
+      setCardsResults(res);
+    }
+  }, [cardArray, firstCard, threeCards]);
 
   return (
     <HomeDiv className="min-h-screen flex justify-center items-center flex-col">
