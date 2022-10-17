@@ -41,26 +41,46 @@ function CardExplanation() {
     <CardExplanationWrapper className="min-h-screen max-w-screen-sm m-auto p-6">
       <h2 className="text-3xl text-center">{cardName}</h2>
       <img className="mx-auto mb-4" src={cardUrl} alt={cardName} />
-      <h3
-        className="text-xl mb-4"
-        dangerouslySetInnerHTML={{ __html: `正位關鍵字：${forwardKeyword}` }}
-      ></h3>
-      <p
-        className="whitespace-pre-wrap mb-8"
-        dangerouslySetInnerHTML={{ __html: forwardExp }}
-      ></p>
-      <h3
-        className="text-xl mb-4"
-        dangerouslySetInnerHTML={{ __html: `逆位關鍵字：${reverseKeyword}` }}
-      ></h3>
-      <p
-        className="whitespace-pre-wrap mb-8"
-        dangerouslySetInnerHTML={{ __html: reverseExp }}
-      ></p>
-      <p
-        className="whitespace-pre-wrap"
-        dangerouslySetInnerHTML={{ __html: `代表星座：${star}` }}
-      ></p>
+      {forwardKeyword ? (
+        <h3
+          className="text-xl mb-4"
+          dangerouslySetInnerHTML={{ __html: `正位關鍵字：${forwardKeyword}` }}
+        ></h3>
+      ) : (
+        ""
+      )}
+      {forwardExp ? (
+        <p
+          className="whitespace-pre-wrap mb-8"
+          dangerouslySetInnerHTML={{ __html: forwardExp }}
+        ></p>
+      ) : (
+        ""
+      )}
+      {reverseKeyword ? (
+        <h3
+          className="text-xl mb-4"
+          dangerouslySetInnerHTML={{ __html: `逆位關鍵字：${reverseKeyword}` }}
+        ></h3>
+      ) : (
+        ""
+      )}
+      {reverseExp ? (
+        <p
+          className="whitespace-pre-wrap mb-8"
+          dangerouslySetInnerHTML={{ __html: reverseExp }}
+        ></p>
+      ) : (
+        ""
+      )}
+      {star ? (
+        <p
+          className="whitespace-pre-wrap"
+          dangerouslySetInnerHTML={{ __html: `代表星座：${star}` }}
+        ></p>
+      ) : (
+        ""
+      )}
     </CardExplanationWrapper>
   );
 }

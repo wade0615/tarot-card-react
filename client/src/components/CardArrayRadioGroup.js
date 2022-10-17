@@ -30,20 +30,12 @@ function CardArrayRadioGroup(props) {
           onChange={valueChange}
           name="radio-buttons-group"
         >
-          <FormControlLabel
-            value="single"
-            control={<Radio />}
-            label="單牌結果"
-          />
-          <FormControlLabel
-            value="treble"
-            control={<Radio />}
-            label="三牌時間流"
-          />
+          <FormControlLabel value="single" control={<Radio />} label="單牌" />
+          <FormControlLabel value="treble" control={<Radio />} label="三牌" />
           <FormControlLabel
             value="penta"
             control={<Radio />}
-            label="五牌時間流"
+            label="五牌"
             disabled
           />
           <FormControlLabel
