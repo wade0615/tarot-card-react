@@ -6,6 +6,7 @@ import SingleCardResult from "../components/SingleCardResult";
 import ThreeCardsResult from "../components/ThreeCardsResult";
 
 import cards from "../assets/cards/index";
+// import angelTarotCards from "../assets/angelTarotCards/index";
 
 import Button from "@mui/material/Button";
 
@@ -87,6 +88,9 @@ function Home() {
         </Button>
       </section>
       {cardsResults}
+      {/* {angelTarotCards.map((angelCard, index) => (
+        <img src={angelCard.img} alt={angelCard.name} className={`w-52`} />
+      ))} */}
     </HomeDiv>
   );
 }
