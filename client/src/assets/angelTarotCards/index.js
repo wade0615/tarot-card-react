@@ -1,4 +1,4 @@
-import dreamer from "./Card-Deck.jpg.webp";
+import dreamer from "./Card-Deck1.jpg.webp";
 import magician from "./Card-Deck2.jpg.webp";
 import highPriestess from "./Card-Deck3.jpg.webp";
 import empress from "./Card-Deck4.jpg.webp";
