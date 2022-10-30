@@ -29,6 +29,7 @@ function Nav({ ...props }) {
       <Tabs
         value={value}
         onChange={handleChange}
+        variant="scrollable"
         textColor="primary"
         indicatorColor="primary"
         aria-label="secondary tabs example"
@@ -40,15 +41,12 @@ function Nav({ ...props }) {
         />
         {value !== ROUTES.MAIN.MAIN &&
         value !== ROUTES.MAIN.CARD_EXPLANATION &&
-        value !== ROUTES.MAIN.GRINGOTTS? (
+        value !== ROUTES.MAIN.GRINGOTTS ? (
           <Tab value={value} label="萬應室" />
         ) : (
           ""
         )}
-        <Tab
-          value={ROUTES.MAIN.GRINGOTTS}
-          label="古靈閣"
-        />
+        <Tab value={ROUTES.MAIN.GRINGOTTS} label="古靈閣" />
       </Tabs>
     </StyleNav>
   );
