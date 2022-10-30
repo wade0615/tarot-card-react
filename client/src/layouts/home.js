@@ -106,14 +106,22 @@ function Home() {
           imgUrl={singleCard?.img}
           route={singleCard?.route}
           inversion={singleCard?.inversion}
+          typeOfCard={typeOfCard}
+          cardType={CardType}
         ></SingleCardResult>
       );
       setCardsResults(res);
     } else if (cardArray === "treble" && threeCards.length > 0) {
-      const res = <ThreeCardsResult cards={threeCards}></ThreeCardsResult>;
+      const res = (
+        <ThreeCardsResult
+          cards={threeCards}
+          typeOfCard={typeOfCard}
+          cardType={CardType}
+        ></ThreeCardsResult>
+      );
       setCardsResults(res);
     }
-  }, [cardArray, singleCard, threeCards]);
+  }, [cardArray, singleCard, threeCards, typeOfCard]);
 
   /** 取得抽牌結果 */
   function getCardsResult() {

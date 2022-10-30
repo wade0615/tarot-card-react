@@ -7,21 +7,38 @@ const SingleCardResult = styled.section`
   color: #878787;
 `;
 
-function singleCardResult({ name = "", route, imgUrl, inversion = true }) {
+function singleCardResult({
+  name = "",
+  route,
+  imgUrl,
+  inversion = true,
+  typeOfCard,
+  cardType,
+}) {
   return (
     <SingleCardResult>
-      <h2 className="mb-4 text-center">單牌陣</h2>
       <p>{name}</p>
-      <Link href={`/${route.toLowerCase()}`} underline="none" color="inherit">
+      {typeOfCard === cardType.WaiteTarot ? (
+        <Link href={`/${route.toLowerCase()}`} underline="none" color="inherit">
+          <img
+            src={imgUrl}
+            alt={name}
+            className={`
+            w-52
+            ${inversion ? "rotate-180" : ""}
+          `}
+          />
+        </Link>
+      ) : (
         <img
           src={imgUrl}
           alt={name}
           className={`
-          w-52
-          ${inversion ? "rotate-180" : ""}
-        `}
+        w-52
+        ${inversion ? "rotate-180" : ""}
+      `}
         />
-      </Link>
+      )}
     </SingleCardResult>
   );
 }
