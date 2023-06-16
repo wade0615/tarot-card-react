@@ -15,7 +15,6 @@ function CardExplanation() {
   const [forwardExp, setForwardExp] = useState("");
   const [reverseKeyword, setReverseKeyword] = useState("");
   const [reverseExp, setReverseExp] = useState("");
-  const [star, setStar] = useState("");
 
   useEffect(() => {
     setPathName(window.location.pathname);
@@ -31,7 +30,6 @@ function CardExplanation() {
         setForwardExp(currentCard[0]?.waiteExp?.forwardExp);
         setReverseKeyword(currentCard[0]?.waiteExp?.reverseKeyword);
         setReverseExp(currentCard[0]?.waiteExp?.reverseExp);
-        setStar(currentCard[0]?.waiteExp?.star);
       }
     }
     getCurrentCard();
@@ -69,14 +67,6 @@ function CardExplanation() {
         <p
           className="whitespace-pre-wrap mb-8"
           dangerouslySetInnerHTML={{ __html: reverseExp }}
-        ></p>
-      ) : (
-        ""
-      )}
-      {star ? (
-        <p
-          className="whitespace-pre-wrap"
-          dangerouslySetInnerHTML={{ __html: `代表星座：${star}` }}
         ></p>
       ) : (
         ""
