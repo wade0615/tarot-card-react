@@ -1,4 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  storeCardTypeAction,
+  storeSingleCardAction,
+  storeThreeCardsAction,
+} from "../redux/action/cardResultAction";
 import styled from "styled-components";
 
 import CardArrayRadioGroup from "../components/CardArrayRadioGroup";
@@ -35,12 +41,38 @@ const CardTypesOptions = [
 ];
 
 function Home() {
+  const reduxDispatch = useDispatch();
+  const storeCardResult = useSelector((state) => state.cardResult);
+
   const [typeOfCard, setTypeOfCard] = useState("");
   const [cards, setCards] = useState(waiteTarotCards);
   const [cardArray, setCardArray] = useState(undefined);
   const [cardsResults, setCardsResults] = useState(<></>);
   const [singleCard, setSingleCard] = useState(undefined);
   const [threeCards, setThreeCards] = useState([]);
+
+  // 初始化
+  useEffect(() => {
+    if (storeCardResult.cardType) {
+      setCardArray(storeCardResult.cardType);
+      switch (storeCardResult.cardType) {
+        // 單牌結果
+        case "single":
+          if (storeCardResult.singleCard) {
+            setSingleCard(storeCardResult.singleCard);
+          }
+          return;
+        // 三牌結果
+        case "treble":
+          if (storeCardResult.threeCards) {
+            setThreeCards(storeCardResult.threeCards);
+          }
+          return;
+        default:
+          return;
+      }
+    }
+  }, [storeCardResult]);
 
   /** 選擇牌組 */
   function handleCardType(cardType) {
@@ -59,6 +91,7 @@ function Home() {
   /** 切換牌陣 */
   const cardArrayHandleChange = (e) => {
     setCardArray(e);
+    reduxDispatch(storeCardTypeAction(e));
   };
 
   /** 取亂數 */
@@ -75,12 +108,17 @@ function Home() {
     if (typeOfCard === CardType.WaiteTarot) {
       singleCard.inversion = CardInversion === 1 ? true : false;
     }
+
     setSingleCard(singleCard);
+    reduxDispatch(storeSingleCardAction(singleCard));
   }
 
   /** 取三張牌 */
   function getThreeCards() {
-    setThreeCards(getMultipleRandomCards(3, cards));
+    const threeCradResult = getMultipleRandomCards(3, cards);
+
+    setThreeCards(threeCradResult);
+    reduxDispatch(storeThreeCardsAction(threeCradResult));
   }
   function getMultipleRandomCards(num, cardsArr) {
     let randomCards = [];
